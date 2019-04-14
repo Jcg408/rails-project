@@ -34,7 +34,7 @@ end
 class StaffServices < ApplicationRecord
   belongs_to :staff
   belongs_to :service
-
+ 
 class Service < ApplicationRecord
   has_many :staff
   has_many :appointments
