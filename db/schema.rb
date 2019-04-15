@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_165600) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
