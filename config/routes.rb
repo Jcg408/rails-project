@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  get 'appointments/new'
   root   'static#home'
 
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
- resources :clients, :staffs
+  get '/signup' => 'clients#new'
+  post '/clients' => 'clients#create'
+
+ resources :clients, only: [:index, :show, :edit]
+ resources :staffs, only: [:index, :new, :show, :edit]
  
+ get 'appointments/new'
 end
+

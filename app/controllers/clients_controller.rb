@@ -13,7 +13,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     if @client.save
       session[:client_id] = @client.id
-      redirect_to /login
+      redirect_to 'client_path(@client)'
     else
       redirect_to new_client
     end
@@ -24,15 +24,7 @@ class ClientsController < ApplicationController
     
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  
-  end
+ 
 
   def client_params
     params.require(:client).permit(:name, :email, :password)

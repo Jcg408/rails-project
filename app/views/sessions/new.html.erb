@@ -1,6 +1,6 @@
 <h1>Login</h1>
 
-<%= form_for login_path do |f| %>
+<%= form_for '/login' do |f| %>
 <%= f.label :email, "Email" %>
 <%= f.text_field :email %> <br>
 
@@ -8,4 +8,5 @@
 <%= f.password_field :password %>
 
 <%= f.submit %>
+
 <% end %>
