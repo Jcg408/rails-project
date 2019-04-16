@@ -5,11 +5,17 @@ class ClientsController < ApplicationController
   end
 
   def new
-    @client = Client.new(client_params)
+    @client = Client.new
   end
 
   def create
-  
+    @client = Client.new(client_params)
+    if @client.save
+      redirect_to login_path
+    else
+      redirect_to new_client
+    end
+      
   end
 
   def show
