@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+  
 
   def index
     @clients = Client.all
@@ -11,7 +12,8 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
     if @client.save
-      redirect_to login_path
+      session[:client_id] = @client.id
+      redirect_to /login
     else
       redirect_to new_client
     end
@@ -19,13 +21,13 @@ class ClientsController < ApplicationController
   end
 
   def show
+    
   end
 
   def edit
   end
 
   def update
-  
   end
 
   def destroy
