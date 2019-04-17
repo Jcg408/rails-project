@@ -1,6 +1,13 @@
-<h1>Welcome</h1>
+<h1>Welcome <%= @client.name %></h1>
 
-<%= link_to  "Create an Account", new_client_path %> <br>
+<!-- <h2>Your current appointments</h2>
+    <ul>
+        <% @client.appointments.all.each do |appt| %>
+        <li>
+            <%= appt.
+        </li>
+    </ul>
+ -->
 
-<h2>Already have an account? </h2>
-<%= link_to  "Log In", login_path %>
+
+

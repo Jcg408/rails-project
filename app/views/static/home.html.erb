@@ -1,8 +1,0 @@
-
-<h1>Welcome to Luxury Day Spa</h1>
-
-<% if current_user %>
-    <h3><%= current_user.name %></h3> | <%= link_to  "Log Out", logout_path %>
-<%else%>
-    <%= link_to  "Login", login_path %> | <%= link_to  "Signup", signup_path %>          
-<%end%>

@@ -13,19 +13,18 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     if @client.save
       session[:client_id] = @client.id
-      redirect_to 'client_path(@client)'
+      redirect_to 'client_path'
     else
-      redirect_to new_client
+      redirect_to root_path
     end
       
   end
 
   def show
-    
+   @client = Client.find(params[:id])
   end
 
- 
-
+    private
   def client_params
     params.require(:client).permit(:name, :email, :password)
   end

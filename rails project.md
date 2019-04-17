@@ -59,11 +59,9 @@ Appointment - need form with date, times, staff available
 Staff sign up and login. Staff has CRUD access. Staff can view personal appts. Scope can be used to find most popular service?
 Staff will have skills attribute which can be set as categories in the form to be selected.
 
-Add on?  - Admin has access to prices, appts, payroll, client schedule, set staff skills and prices - nested form under staff?
 
 Want to have a dropdown list of services and prices to choose from and some kind of calendar to select date.
 
-Navbar for Spa regulations, prices for services, staff information?
 
 =====================================================================
 example has many through
