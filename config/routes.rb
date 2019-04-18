@@ -10,6 +10,8 @@ root 'sessions#home'
  resources :clients
  resources :staffs
  resources :services
-#  get 'appointments/new'
+ 
+resources :appointments
+
 end
 
