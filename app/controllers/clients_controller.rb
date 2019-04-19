@@ -4,7 +4,7 @@ class ClientsController < ApplicationController
   def index
     @clients = Client.all
   end
-
+ 
   def new
     @client = Client.new
   end
@@ -13,15 +13,15 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     if @client.save
       session[:client_id] = @client.id
-      redirect_to 'client_path'
+      redirect_to 'staff_services'
     else
-      redirect_to root_path
+      render :new
     end
       
   end
 
   def show
-   @client = Client.find(params[:id])
+   @client = Client.find_by(id: params[:id])
   end
 
     private

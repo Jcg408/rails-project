@@ -1,9 +1,8 @@
 class AppointmentsController < ApplicationController
+  
   def index
     @appointments = Appointment.all
-    if @appointments.length.zero?
-      flash[:alert] = 'You have no appointments. Create one now to get started.'
-    end
+    
   end
 
   def new
@@ -11,16 +10,26 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+
     @appointment = Appointment.new(appt_params)
+  
     if @appointment.save
-      redirect_to '/client/show'
+      
+      redirect_to 'client_path(@client)'
     else
-      render :new
+      redirect_to '/'
+    end
   end
+
+  def show
+    @appointment = Appointment.find(params[:id])
   end
 
   private
+  
   def appt_params
-    params.require(:appointment).permit(:date, :time, :client_id, :staff_id, :service_id)
+    params.require(:appointment).permit(:datetime, :appointment =>[:service_id])
+     
   end
+
 end

@@ -1,8 +1,7 @@
 class Client < ApplicationRecord
      has_secure_password
 
-    validates :name, presence: true 
-    validates :email, presence: true
+    validates :name, :email, presence: true 
     validates :email, uniqueness: true
     
     has_many :appointments

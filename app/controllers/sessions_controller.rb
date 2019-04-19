@@ -4,17 +4,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @client = Client.find_by(name: params[:session][:name])
-    if @client && @client.authenticate(params[:session][:password])
+    @client = Client.find_by(email: params[:client][:email])
+    if @client && @client.authenticate(params[:client][:password])
         session[:client_id] = @client.id
         redirect_to client_path(@client)
     else
-        redirect_to root_path
+        redirect_to 'login'
+        
     end
   end
 
   def destroy
     session.clear
-    redirect_to root_path
+    redirect_to '/'
   end
 end

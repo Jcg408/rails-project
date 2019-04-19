@@ -3,15 +3,14 @@ root 'sessions#home'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
-  
-  
+  delete '/logout' => 'sessions#destroy'
 
  resources :clients
- resources :staffs
- resources :services
+ resources :staffs 
  
-resources :appointments
+ resources :appointments do 
+    resources :services
+  end
 
 end
 

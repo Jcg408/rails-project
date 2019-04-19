@@ -1,18 +1,19 @@
 class ServicesController < ApplicationController
     def index
         @services = Services.all
-    
     end
     
     def new
-        @service = Service.new(service_params)
+        @service = Service.new
     end
     
     def create
-    
-    
+        @service = Service.create(service_params)
     end
 
+    def show
+        @service = Service.find(params[:id])
+    end
    
     private
 

@@ -1,7 +1,7 @@
 <h1>Welcome <%= @client.name %> </h1>
 
 <h2>Your current appointments </h2>
-    <%binding.pry%>
+   
     <ul>
         <% @client.appointments.each do |appt|%>
         
@@ -11,7 +11,8 @@
         </li>
         <%end%>
     </ul>
-
-<%= link_to "Book Appointment", appointments_new_path %>
+    
+   
+<%= link_to "Book Appointment", new_appointment_path %>
 
 

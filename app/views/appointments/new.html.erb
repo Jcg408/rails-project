@@ -1,10 +1,15 @@
-<h1>Appointments#new</h1>
+<h1>Book an Appointment</h1>
 
 <%= form_for @appointment do |f| %>
-  <%= f.date_select :appointment_date %> <br> <br>
-  <%= f.time_select :appointment_time %> <br> <br>
-  <%= f.collection_select :staff, Staff.all, :id, :name %> <br> <br>
-  <%= f.collection_select :service, Service.all, :id, :name %> <br> <br>
+    <%= f.label :datetime, "Appointment Date" %>
+  <%= f.date_select :datetime %> <br> 
+
+  <%= f.label :time, "Appointment Time" %>
+  <%= f.time_select :datetime %> <br>
+
+  <%= f.label :service, "Spa Service" %>
+  <%= f.collection_select :service, Service.all, :id, :name %> <br> 
+
   <%= f.submit %>
 <% end %>
 
