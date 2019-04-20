@@ -7,10 +7,10 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new
+    @service = Service.new
   end
 
   def create
-
     @appointment = Appointment.new(appt_params)
   
     if @appointment.save
@@ -28,8 +28,7 @@ class AppointmentsController < ApplicationController
   private
   
   def appt_params
-    params.require(:appointment).permit(:datetime)
-     
+    params.require(:appointment).permit(:datetime, :service_id)
   end
 
 end

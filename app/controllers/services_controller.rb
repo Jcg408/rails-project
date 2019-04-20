@@ -8,7 +8,13 @@ class ServicesController < ApplicationController
     end
     
     def create
-        @service = Service.create(service_params)
+        @service = Service.new(service_params)
+        binding.pry
+        if @service.save
+            redirect_to service_appointment_path(@service)
+        else
+            redirect_to '/'
+        end
     end
 
     def show

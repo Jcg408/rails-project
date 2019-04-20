@@ -1,6 +1,6 @@
 <h1>Book an Appointment</h1>
 
-<%= form_for @appointment do |f| %>
+<%= form_for service_appointments_path(appointment) do |f| %>
     <%= f.label :datetime, "Appointment Date" %>
   <%= f.date_select :datetime %> <br> 
 

@@ -1,19 +1,22 @@
    <!-- services & staff form -->
-   <%= form_for new_staff_service_path do |f| %>
+  <p>
+  <%= form_for new_service_path, url: services_path do |f| %>
    
-  <%= f.label :staff, "Staff Name" %>
-  <%= f.collection_select :staff, Staff.all, :id, :name %> <br> 
+    <%= f.label :staff, "Staff Name" %>
+    <%= f.collection_select :staff, Staff.all, :id, :name %> <br> 
 
-  <%= f.label :service, "Spa Service" %>
-  <%= f.collection_select :service, Service.all, :id, :name %> <br> 
+    <%= f.label :service, "Spa Service" %>
+    <%= f.collection_select :service, Service.all, :id, :name %> <br> 
 
-  <%= f.fields_for :appointment do |f| %>
-    <%= f.label :email, "Email" %>
-    <%= f.text_field :email %>
+    <%= f.fields_for :appointment do |f| %>
+      <%= f.label :datetime, "Appointment Date" %>
+      <%= f.date_select :datetime %> <br> 
 
-    <%= f.label :password, "Password" %>
-    <%= f.text_field :password %>
-  <%end%>
-  <%end%>
-  <%= f.submit %>
+      <%= f.label :time, "Appointment Time" %>
+      <%= f.time_select :datetime %> <br>
+
+      <%end%>
+    <%= f.submit %>
   
+  <%end%>
+  </p> 
