@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @client = Client.find_by(email: params[:client][:email])
     if @client && @client.authenticate(params[:client][:password])
         session[:client_id] = @client.id
-        redirect_to client_path(@client)
+        redirect_to @client
     else
         redirect_to 'login'
         

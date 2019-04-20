@@ -13,7 +13,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     if @client.save
       session[:client_id] = @client.id
-      redirect_to 'staff_services'
+      redirect_to 'login_path'
     else
       render :new
     end

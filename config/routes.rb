@@ -8,8 +8,8 @@ root 'sessions#home'
  resources :clients
  resources :staffs 
  
- resources :appointments do 
-    resources :services
+ resources :services do 
+    resources :appointments
   end
 
 end

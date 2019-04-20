@@ -1,4 +1,5 @@
-    <%= form_for new_staff_service_path do |f| %>
+   <!-- services & staff form -->
+   <%= form_for new_staff_service_path do |f| %>
    
   <%= f.label :staff, "Staff Name" %>
   <%= f.collection_select :staff, Staff.all, :id, :name %> <br> 
@@ -6,5 +7,13 @@
   <%= f.label :service, "Spa Service" %>
   <%= f.collection_select :service, Service.all, :id, :name %> <br> 
 
-  <%= f.submit %>
+  <%= f.fields_for :appointment do |f| %>
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password, "Password" %>
+    <%= f.text_field :password %>
   <%end%>
+  <%end%>
+  <%= f.submit %>
+  

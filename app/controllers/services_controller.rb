@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
     def index
-        @services = Services.all
+        @services = Service.all
     end
     
     def new
@@ -18,6 +18,6 @@ class ServicesController < ApplicationController
     private
 
     def service_params
-        params.require(:service).permit(:name)
+        params.require(:service).permit(:name, appointment_attributes: [:email, :password])
     end
 end
