@@ -5,7 +5,6 @@ class ServicesController < ApplicationController
     
     def new
         @service = Service.new
-        @appointment = Appointment.new
     end
     
     def create

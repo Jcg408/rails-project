@@ -10,16 +10,18 @@ class AppointmentsController < ApplicationController
   
   def new
     @appointment = Appointment.new
-    @service = Service.new
   end
 
   def create
-    @appointment = Appointment.new(appt_params)
-    if @appointment.save
-      redirect_to 'client_path(@client)'
+ 
+    if current_user
+      @appointment = current_user.appointments.create(appt_params)  
+      
+      redirect_to service_appointment_path(@appointment.service, @appointment)
     else
-      redirect_to '/'
+       redirect_to new_appointment_path
     end
+    
   end
 
   def show
@@ -29,7 +31,7 @@ class AppointmentsController < ApplicationController
   private
   
   def appt_params
-    params.require(:appointment).permit(:datetime, :service_id)
+    params.require(:appointment).permit(:datetime, :staff_id, :service_id)
   end
 
 end

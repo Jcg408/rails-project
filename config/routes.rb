@@ -7,9 +7,10 @@ root 'sessions#home'
 
  resources :clients
  resources :staffs 
- 
+ resources :appointments, only: [:new, :create]
+
  resources :services do 
-    resources :appointments, only: [:new, :index, :create, :show]
+    resources :appointments, except: [:new, :create]
   end
 
 end
