@@ -5,13 +5,13 @@ class ServicesController < ApplicationController
     
     def new
         @service = Service.new
+        @appointment = Appointment.new
     end
     
     def create
         @service = Service.new(service_params)
-        binding.pry
         if @service.save
-            redirect_to service_appointment_path(@service)
+            redirect_to services_path
         else
             redirect_to '/'
         end
@@ -24,6 +24,6 @@ class ServicesController < ApplicationController
     private
 
     def service_params
-        params.require(:service).permit(:name, appointment_attributes: [:email, :password])
+        params.require(:service).permit(:name)
     end
 end

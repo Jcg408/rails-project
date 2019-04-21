@@ -1,10 +1,13 @@
 class AppointmentsController < ApplicationController
   
   def index
-    @appointments = Appointment.all
-    
+    if params[:service_id]
+      @appointments = Service.find(params[:service_id]).appointments
+    else
+      @appointments = Appointment.all
+    end
   end
-
+  
   def new
     @appointment = Appointment.new
     @service = Service.new
@@ -12,9 +15,7 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appt_params)
-  
     if @appointment.save
-      
       redirect_to 'client_path(@client)'
     else
       redirect_to '/'

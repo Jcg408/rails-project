@@ -1,15 +1,25 @@
 <h1>Book an Appointment</h1>
 
-<%= form_for service_appointments_path(appointment) do |f| %>
-    <%= f.label :datetime, "Appointment Date" %>
-  <%= f.date_select :datetime %> <br> 
+<p>
+  <%= form_for new_service_appointment_path do |f| %>
+   
+    <%= f.label :staff, "Staff Name" %>
+    <%= f.collection_select :staff, Staff.all, :id, :name %> <br> 
 
-  <%= f.label :time, "Appointment Time" %>
-  <%= f.time_select :datetime %> <br>
+    <%= f.label :service, "Spa Service" %>
+    <%= f.collection_select :service, Service.all, :id, :name %> <br> 
+  
 
-  <%= f.label :service, "Spa Service" %>
-  <%= f.collection_select :service, Service.all, :id, :name %> <br> 
+    <%= f.fields_for :appointment do |f| %>
+      <%= f.label :datetime, "Appointment Date" %>
+      <%= f.date_select :datetime %> <br> 
 
-  <%= f.submit %>
-<% end %>
+      <%= f.label :time, "Appointment Time" %>
+      <%= f.time_select :datetime %> <br>
+
+      <%end%>
+    <%= f.submit %>
+  
+  <%end%>
+  </p> 
 

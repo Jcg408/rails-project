@@ -9,7 +9,7 @@ root 'sessions#home'
  resources :staffs 
  
  resources :services do 
-    resources :appointments
+    resources :appointments, only: [:new, :index, :create, :show]
   end
 
 end
