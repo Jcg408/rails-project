@@ -1,17 +1,19 @@
 <h1>Welcome <%= @client.name %> </h1>
 
 <p>Your current appointments </p>
-   
     <ul>
-        <% @client.appointments.each do |appt|%>
         
+        <% @client.appointments.each do |appt|%>
+      <%= link_to  "Edit", edit_appointment_path(appt) %>
+
         <li>
-            <p> Schedule: <%= appt.datetime.strftime("%m/%d/%Y at %I:%M%P")%> </p>
+            <p> Date: <%= appt.datetime.strftime("%m/%d/%Y at %I:%M%P")%></p>
             <p>Service: <%= appt.service.name %></p>
             <p>Staff: <%= appt.staff.name%> </p>
-            
         </li>
+       
         <%end%>
+        
     </ul>
 <%= link_to "List of Services", services_path%> <br> 
 

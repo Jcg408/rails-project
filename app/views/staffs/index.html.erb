@@ -1,0 +1,12 @@
+<h1>Meet the Staff</h1>
+<ul>
+    <% @staffs.each do |staff|%>
+    <li>
+        <h2><%= staff.name %></h2> <br>
+        <p> <%= staff.bio %></p> <br>
+        <hr>
+    </li>
+    <%end%>
+</ul>
+<%= link_to  "Home Page", '/' %>
+

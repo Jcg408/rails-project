@@ -4,7 +4,7 @@ class StaffsController < ApplicationController
   end
 
   def index
-    @staff = Staff.all
+    @staffs = Staff.all
   end
 
   def show

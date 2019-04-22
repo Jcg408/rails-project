@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
         session[:client_id] = @client.id
         redirect_to @client
     else
-        redirect_to 'login'
+        
+        redirect_to '/', :flash =>{:notice => 'Invalid Log In. Please try again.'}
         
     end
   end
