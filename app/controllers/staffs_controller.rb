@@ -14,4 +14,10 @@ class StaffsController < ApplicationController
   def edit
   end
 
+  private
+
+  def staff_params
+    params.require(:staff).permit(:name)
+  end
+
 end
