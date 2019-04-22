@@ -1,13 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appt, only: [:edit, :show, :destroy]
-  
-  def index
-    if params[:service_id]
-      @appointments = Service.find(params[:service_id]).appointments
-    else
-      @appointments = Appointment.all
-    end
-  end
+  before_action :set_appt, only: [:edit, :show, :update, :destroy]
   
   def new
     @appointment = Appointment.new
@@ -23,26 +15,21 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
-    @appointment.update(appt_params)
-    if @appointment.save
-      redirect_to service_appointment_path(@appointment.service, @appointment)
-    else
-      render :edit
-    end
+   @appointment.update(appt_params)
+   redirect_to client_path
+  
   end
 
   def show
-  
   end
 
   def destroy
     @appointment.clear
-    flash[:notice] = "Artist deleted."
-    redirect_to 'clients_path'
+    flash[:notice] = "Appointment deleted."
+    redirect_to client_path
   end
 
   private

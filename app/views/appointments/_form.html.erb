@@ -8,10 +8,10 @@
       <%= f.collection_select :service_id, Service.all, :id, :name %> <br> 
   
         <%= f.label :datetime, "Appointment Date" %>
-        <%= f.date_select :datetime %> <br> 
+        <%= f.date_select :datetime, start_year: 2019, end_year: 2021%> <br> 
   
         <%= f.label :time, "Appointment Time" %>
-        <%= f.time_select :datetime %> <br>
+        <%= f.time_select :datetime, {minute_step: 15, ampm: true} %> <br>
       <%= f.submit %>
     <%end%>  
   </p> 

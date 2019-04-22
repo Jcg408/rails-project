@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_165600) do
 
   create_table "staffs", force: :cascade do |t|
     t.string "name"
+    t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
