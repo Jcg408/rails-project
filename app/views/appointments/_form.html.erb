@@ -2,7 +2,7 @@
 <p>
     <%= form_for @appointment do |f| %>
       <%= f.label :date, "Appointment Date" %>
-      <%= f.date_field :date %> <br> 
+      <%= f.date_field :date, min: Date.today%> <br> 
       <%= f.label :time, "Appointment Time" %>
       <%= f.time_field :time%> <br>
 

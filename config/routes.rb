@@ -5,7 +5,7 @@ root 'sessions#home'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
- resources :clients, only: [:new, :index, :edit, :show]
+ resources :clients, except: [:edit, :update, :destroy]
  resources :staffs, only: [:index, :show]
  resources :appointments, only: [:new, :create, :edit, :update]
 

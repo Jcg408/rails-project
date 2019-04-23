@@ -9,14 +9,12 @@ class SessionsController < ApplicationController
         session[:client_id] = @client.id
         redirect_to @client
     else
-        
         redirect_to '/', :flash =>{:notice => 'Invalid Log In. Please try again.'}
-        
     end
   end
 
   def destroy
     session.clear
-    redirect_to '/'
+    redirect_to '/', :flash =>{:notice => 'Log Out Successful'}
   end
 end

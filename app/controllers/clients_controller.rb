@@ -8,7 +8,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     if @client.save
       session[:client_id] = @client.id
-      redirect_to 'login_path'
+      redirect_to client_path(@client)
     else
       render :new
     end
