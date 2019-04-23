@@ -1,6 +1,7 @@
 <h1>Appointment Scheduled for <%= @appointment.client.name%> </h1>
 
-<h2>Schedule: <%= @appointment.datetime.strftime("%m/%d/%Y at %I:%M%P")%></h2>
+<h2>Date: <%= @appointment.date.strftime("%m/%d/%Y")%></h2>  
+<h2>Time:  <%= @appointment.time.strftime("%I:%M%P")%> </h2> 
 <h2>Service: <%= @appointment.service.name %></h2>
 <h2>Staff: <%= @appointment.staff.name%> </h2>
 
