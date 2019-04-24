@@ -1,5 +1,4 @@
 <h1>Log In </h1>
-<% if session[:client_id] %>
     <%= form_for @client, url: login_path do |f| %>
 
     <%= f.label :email, "Email" %>
@@ -10,8 +9,3 @@
 
     <%= f.submit "Log In"%>
     <% end %>
-<%else%>
-
-    <h2>Log In with Facebook UID: <%= @client.uid %></h2>
-    <%= link_to('Log in with Facebook!', '/auth/facebook') %>
-<% end %>

@@ -21,9 +21,8 @@ class SessionsController < ApplicationController
         client.password = SecureRandom.hex
       end
 
-      session[:user_id] = @user.id
+      session[:client_id] = @client.id
       redirect_to @client
-   
   end
 
   def destroy
