@@ -8,9 +8,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+    <nav class='navbar'>
+      <%= link_to  "Meet the Staff", staffs_path %>
+      <%= link_to "List of Services", services_path%> <br> 
+      <%= link_to  "Home Page", '/' %>
+    </nav>
+    
+  </header>
 
   <body>
-     <%= link_to  "Log Out", logout_path, method: :delete %>
+     
     <%= yield %>
   </body>
 </html>

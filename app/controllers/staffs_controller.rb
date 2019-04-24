@@ -4,7 +4,7 @@ class StaffsController < ApplicationController
   end
 
   def index
-    @staffs = Staff.all
+    @staffs = Staff.alphabetize
   end
 
   def show

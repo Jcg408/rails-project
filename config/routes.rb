@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 root 'sessions#home'
 
+  get '/auth/facebook/callback' => 'sessions#omniauth_create'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
