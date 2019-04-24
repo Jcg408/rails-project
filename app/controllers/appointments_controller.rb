@@ -1,5 +1,9 @@
 class AppointmentsController < ApplicationController
   before_action :set_appt, only: [:edit, :show, :update, :destroy]
+
+  def index
+    @appointments = Appointment.all
+  end
   
   def new
     @appointment = Appointment.new
@@ -27,6 +31,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+   
   end
 
   def destroy

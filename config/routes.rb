@@ -7,6 +7,8 @@ root 'sessions#home'
   
   get '/auth/facebook/callback' => 'sessions#omniauth_create'
 
+  get '/admin' => 'staffs#admin'
+
  resources :clients, except: [:edit, :update, :destroy]
  resources :staffs, only: [:index, :show]
  resources :appointments, only: [:new, :create, :edit, :update]

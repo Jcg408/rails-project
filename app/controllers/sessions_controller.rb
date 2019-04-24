@@ -14,12 +14,14 @@ class SessionsController < ApplicationController
   end
 
   def omniauth_create
+      if auth['uid']
       @client = Client.find_or_create_by(uid: auth['uid']) do |client|
         client.name = auth['info']['name']
         client.email = auth['info']['email']
         client.image = auth['info']['image']
         client.password = SecureRandom.hex
       end
+    end
 
       session[:client_id] = @client.id
       redirect_to @client

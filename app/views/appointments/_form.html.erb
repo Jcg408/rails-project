@@ -1,6 +1,6 @@
 
-<p>
-    <%= form_for @appointment do |f| %>
+<fieldset>
+<%= form_for @appointment do |f| %>
       <%= f.label :date, "Appointment Date" %>
       <%= f.date_field :date, min: Date.today%> <br> 
       <%= f.label :time, "Appointment Time" %>
@@ -12,6 +12,9 @@
       <%= f.label :service, "Spa Service" %>
       <%= f.collection_select :service_id, Service.all, :id, :name %> <br> 
       <%= f.submit %>
-    <%end%>  
-  </p> 
+    <%end%> 
+
+</fieldset>
+     
+ 
   
