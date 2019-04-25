@@ -9,12 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
-    <nav class='navbar'>
-      <%= link_to  "Meet the Staff", staffs_path %>
-      <%= link_to "List of Services", services_path%> <br> 
-      <%= link_to  "Home Page", '/' %>
-    </nav>
-    
+      <%= link_to   "Meet the Staff", staffs_path, class:'btn' %>
+      <%=  link_to  "List of Services", services_path, class: 'btn'%> 
+      <%=  link_to  "Home Page", '/', class: 'btn'%>
+  
   </header>
 
   <body>

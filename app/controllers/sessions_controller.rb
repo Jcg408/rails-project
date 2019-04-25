@@ -9,10 +9,11 @@ class SessionsController < ApplicationController
         session[:client_id] = @client.id
         redirect_to @client
     else
-        redirect_to '/', :flash =>{:notice => 'Invalid Log In. Please try again.'}
+        
+        render :new
     end
   end
-
+  
   def omniauth_create
       if auth['uid']
       @client = Client.find_or_create_by(uid: auth['uid']) do |client|
@@ -22,7 +23,6 @@ class SessionsController < ApplicationController
         client.password = SecureRandom.hex
       end
     end
-
       session[:client_id] = @client.id
       redirect_to @client
   end

@@ -1,32 +1,23 @@
 
+<!-- These form fields have built in validations. No need for field_with_errors. -->
 
-<%= form_for @appointment do |f| %>
-<% if @appointment.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@appointment.errors.count, "error") %>
-      prohibited this appointment from being saved:
-    </h2>
- 
-    <ul>
-    <% @appointment.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-      <%= f.label :date, "Appointment Date" %>
-      <%= f.date_field :date, min: Date.today%> <br> 
-      <%= f.label :time, "Appointment Time" %>
-      <%= f.time_field :time%> <br>
-
-      <%= f.label :staff, "Staff Name" %>
-      <%= f.collection_select :staff_id, Staff.all, :id, :name %> <br> 
-  
-      <%= f.label :service, "Spa Service" %>
-      <%= f.collection_select :service_id, Service.all, :id, :name %> <br> 
-      <%= f.submit %>
+<div class = 'appt'>
+  <%= form_for @appointment do |f| %>      
+    <%= f.label :date, "Appointment Date" %>    
+    <%= f.date_field :date, min: Date.today%> <br> 
+    <%= f.label :time, "Appointment Time" %>
+    <%= f.time_field :time%> <br>    
+    
+    <%= f.label :staff, "Staff Name" %>
+    <%= f.collection_select :staff_id, Staff.all, :id, :name %> <br> 
+    
+    <%= f.label :service, "Spa Service" %>
+    <%= f.collection_select :service_id, Service.all, :id, :name %> <br> 
+    <%= f.submit 'Submit', class: 'submit'%>      
+        
     <%end%> 
+</div>
+
 
      
  

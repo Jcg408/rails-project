@@ -14,11 +14,11 @@ class StaffsController < ApplicationController
   def edit
   end
 
+ 
   def admin
     @booked = Client.appts_admin
   end
-
-  private
+private
 
   def staff_params
     params.require(:staff).permit(:name)

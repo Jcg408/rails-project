@@ -13,7 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+ .field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
  body {
-     margin: 20px;
-     font-family: 'Helvetica' 
- }
+  background-image: url(/assets/spa1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Helvetica', sans-serif;
+  margin: 30px auto;
+}
+
+ 
+  .btn {
+    background-color: rgb(139, 46, 197); 
+    border: 1px;
+    border-radius: 8px;
+    color: white;
+    padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px;
+    font-size: 14px;
+  }
