@@ -15,11 +15,10 @@ class StaffsController < ApplicationController
   end
 
   def admin
-    @staff_booked = Staff.booked
+    @booked = Client.appts_admin
   end
 
   private
-  
 
   def staff_params
     params.require(:staff).permit(:name)

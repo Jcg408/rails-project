@@ -8,5 +8,8 @@ class Client < ApplicationRecord
     has_many :staffs, through: :appointments
 
     accepts_nested_attributes_for :appointments
-   
+
+    def self.appts_admin
+      joins(:appointments).order(:date).pluck(:name, :date).uniq
+    end
 end

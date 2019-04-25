@@ -6,11 +6,8 @@ class Staff < ApplicationRecord
     validates :name, :bio, presence: true
 
     def self.alphabetize
-        self.order('name')
+        self.order(:name)
     end
 
-   def self.booked
-    self.joins(:clients).includes(:clients)
-    # s.order(:appointments)
-  end 
+  
 end

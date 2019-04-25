@@ -31,7 +31,6 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-   
   end
 
   def destroy

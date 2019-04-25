@@ -1,14 +1,19 @@
 <h1>Staff Admin</h1>
 
-<h2>Staff Currently Booked</h2>
-<ul>
-     <% @staff_booked.each do |staff| %>
-    <li>
-       <p><%=staff.name%>  </p>
-    </li>
-    <%end%>
-</ul>
 
+<h2>Appointments Booked</h2> 
+   <ul>
+      <% @booked.each do |appt|%>
+      <li>
+         <p> <%= appt[0]%> - <%= appt[1] %> 
+      </li>
+      <%end%>
+   </ul>
+
+   
+
+
+   
 
 
 

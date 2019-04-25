@@ -5,9 +5,12 @@ root 'sessions#home'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
   
+  get '/admin' => 'staffs#admin'
+
+
   get '/auth/facebook/callback' => 'sessions#omniauth_create'
 
-  get '/admin' => 'staffs#admin'
+  
 
  resources :clients, except: [:edit, :update, :destroy]
  resources :staffs, only: [:index, :show]
