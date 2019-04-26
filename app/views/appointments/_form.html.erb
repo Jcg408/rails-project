@@ -2,7 +2,19 @@
 <!-- These form fields have built in validations. I have also included field with errors. -->
 
 <div class = 'appt'>
-  <%= form_for @appointment do |f| %>      
+  <%= form_for @appointment do |f| %>   
+ 
+        <% if @appointment.errors.any? %>
+            <div id="error_explanation">
+            <h2>Errors:</h2>
+
+            <ul>
+                <% @appointment.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <%end%>
+            </ul>
+            </div>
+        <%end%>   
     <%= f.label :date, "Appointment Date" %>    
     <%= f.date_field :date, min: Date.today%> <br> 
     <%= f.label :time, "Appointment Time" %>
