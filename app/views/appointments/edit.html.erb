@@ -1,9 +1,10 @@
  
+ <div class='container'>   
+    <h1>Edit Appointment</h1>
+    <%= render "form"%>
+
+    <%= link_to  "Delete Appointment", service_appointment_path(@appointment.service, @appointment), method: :delete, class: 'btn' %>
     
-<h1>Edit Appointment</h1>
-<%= render "form"%>
+    
 
-<%= link_to  "Delete Appointment", service_appointment_path(@appointment.service, @appointment), method: :delete, class: 'btn' %>
-<%= link_to  "Log Out", logout_path, method: :delete, class: 'btn' %>
-
-
+</div>

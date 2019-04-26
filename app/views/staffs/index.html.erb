@@ -1,12 +1,12 @@
-<h1>Meet the Staff</h1>
-<ul>
-    <% @staffs.each do |staff|%>
-    <li>
-        <h2><%= staff.name %></h2> 
-        <p> <%= staff.bio %></p> <br>
-        <hr>
-    </li>
-    <%end%>
-</ul>
-
-
+<div class='container'>
+    <h2>Meet the Staff</h2>
+    <ul>
+        <% @staffs.each do |staff|%>
+        <li>
+            <h3><%= staff.name %></h3> 
+            <p> <%= staff.bio %></p> <br>
+           
+        </li>
+        <%end%>
+    </ul>
+</div>

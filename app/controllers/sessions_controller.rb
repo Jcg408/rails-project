@@ -9,8 +9,13 @@ class SessionsController < ApplicationController
         session[:client_id] = @client.id
         redirect_to @client
     else
-        redirect_to '/', :flash =>{notice => 'Unsuccessful Login. Please try again.'}
+      flash[:notice] = 'Unsuccessful Login. Please try again.'
+        redirect_to '/'
     end
+  end
+
+  def show
+  
   end
   
   def omniauth_create
@@ -28,7 +33,8 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    redirect_to '/', :flash =>{:notice => 'Log Out Successful'}
+    flash[:notice] = 'Log Out Successful'
+    redirect_to '/'
   end
 
   private

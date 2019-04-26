@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+README
+Overview - Rails Project/Flatiron School/ J. Gladstone
 
-Things you may want to cover:
 
-* Ruby version
+The application is for a Luxury Day Spa which allows clients to sign up and book appointments with staff members for certain services.
 
-* System dependencies
+The application uses Omniauth/Facebook for users who would like to login using OAuth.
+The requirements for the project are listed in the spec.md file.
 
-* Configuration
+I have added seed data for testing and used basic css for styling.
 
-* Database creation
+To install this app, follow these steps:
 
-* Database initialization
+Fork and clone the repository, run bundle install, rake db:migrate, rake db:seed, rails s and open browser to localhost:3000.
 
-* How to run the test suite
+This project has been licensed under the MIT open source license.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+
+

@@ -1,15 +1,15 @@
 
-<div class= 'home'>
+<div class= 'container'>
    
-         <h1> A Special Touch Day Spa</h1>
-        <h2>~ A full service day spa to pamper a busy life style ~</h2><br>
-
+        <h2>Let Us Pamper Your Busy Lifestyle. </h2>
+        
+    <div>
     <h3>New Account</h3>
     <%= link_to  "Join Us", new_client_path, class: 'btn' %> <br>
 
     <h3>Already have an account? </h3>
     <%= link_to  "Log In", login_path, class: 'btn' %> <br>
-  
-
-  <h3><%= link_to 'Log in with Facebook!', '/auth/facebook', class: 'facebook' %>  </h3>
+    </div>
+<hr>
+  <h3><%= button_to 'Log in with Facebook!', '/auth/facebook', class: 'facebook' %>  </h3>
 </div>

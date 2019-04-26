@@ -1,13 +1,7 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1 {
-    padding: 15px;
-    text-align: center;
-    font-style: italic;
-    font-size: 2.8em;
-    color: #7C2AB2;
-}
+
 
 .login {
     margin: 150px auto;
@@ -16,11 +10,10 @@ h1 {
     font-size: 20px;
     width: 600px ;
 }
-
-.home {
-    margin: 150px auto;
-    text-align: left;
+.facebook {
+    background-color: rgb(55, 98, 241);
+    color: white;
     font-size: 20px;
-    width: 780px;
-    color: black;
+    margin: 10px auto;
+    border-radius: 8px;
 }

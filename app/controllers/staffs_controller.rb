@@ -16,7 +16,7 @@ class StaffsController < ApplicationController
 
   def admin
     @booked = Client.appts_admin
-    @appts = Appointment.select(:date, :time, :staff_id, :client_id).order(:date)
+    
   end
 private
 

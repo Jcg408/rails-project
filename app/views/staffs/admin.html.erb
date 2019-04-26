@@ -4,14 +4,16 @@
 
 <h2>Appointments Booked</h2> 
    <ul>
+      
       <% @booked.each do |appt|%>
-   
       <li>
-         <p> <%= appt[0]%> - <%= appt[1] %> 
+         <p> Client: <%= appt[0]%> </p>
+         <p> Date: <%= appt[1] %> </p> <br>
       </li>
       <%end%>
    </ul>
 
+ 
    
    
    

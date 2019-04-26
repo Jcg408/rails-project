@@ -1,18 +1,8 @@
 
-<div class= 'login'>
+<div class= 'container'>
 <h1>Log In </h1>
     <%= form_for @client, url: login_path do |f| %>
-    <% if @client.errors.any? %>
-    <div id="error_explanation">
-      <h2>There were some errors:</h2>
-
-      <ul>
-        <% @client.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-    <%end%>
+   
     <%= f.label :email, "Email" %>
     <%= f.text_field :email %> <br>
 

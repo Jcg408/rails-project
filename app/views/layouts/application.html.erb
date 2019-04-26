@@ -12,11 +12,24 @@
       <%= link_to   "Meet the Staff", staffs_path, class:'btn' %>
       <%=  link_to  "List of Services", services_path, class: 'btn'%> 
       <%=  link_to  "Home Page", '/', class: 'btn'%>
-  
+      <%= link_to  "Log Out", logout_path, method: :delete, class: 'btn' %>
+     
   </header>
 
   <body>
+      <h1> A Special Touch Day Spa</h1>
+    <div class = 'flash'>
+      <% flash.each do |name, msg| %>
+      <h3> <%= msg %> </h3>
+     <%end%>
+    </div>
+    <div class = container>
+       <%= yield %>
+    </div>
      
-    <%= yield %>
   </body>
+
+  <footer>
+  Address: 123 Primrose Lane, Anywhere VA, 00000, Ph: 111-222-3333
+  </footer>
 </html>
