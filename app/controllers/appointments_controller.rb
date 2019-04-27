@@ -37,7 +37,7 @@ class AppointmentsController < ApplicationController
 
   def destroy
     @appointment.delete
-    flash[:notice] = "Appointment deleted."
+    flash[:notice] = "Appointment Cancelled."
     redirect_to client_path
   end
 

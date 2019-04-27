@@ -10,6 +10,6 @@ class Client < ApplicationRecord
     accepts_nested_attributes_for :appointments
 
     def self.appts_admin
-      joins(:appointments).pluck(:name, :date, :time)
+      joins(:appointments).order(:date).pluck(:name, :date)
     end
 end

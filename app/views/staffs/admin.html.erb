@@ -6,10 +6,14 @@
    <ul>
       
       <% @booked.each do |appt|%>
-      <li>
+        <!-- <% appt.each do |value|%>
+       <li>  
+            <%= value%>
+      <%end%> -->
          <p> Client: <%= appt[0]%> </p>
          <p> Date: <%= appt[1] %> </p> <br>
       </li>
+      
       <%end%>
    </ul>
 
