@@ -4,7 +4,6 @@
     <ul>
         <% @client.appointments.each do |appt|%>
       <p><%= link_to  "Edit", edit_appointment_path(appt) %> <p> 
-
         <li>
             <p> Date: <%= appt.date%></p>
             <p> Time: <%= appt.time%></p>    
@@ -16,7 +15,7 @@
     </ul>
 </div>
 
-<%= link_to  "Book an Appointment", new_appointment_path, class: 'btn'%> <br>
+<%= link_to  "Book an Appointment", new_service_appointment_path(@client), class: 'btn'%> <br>
 
 
 

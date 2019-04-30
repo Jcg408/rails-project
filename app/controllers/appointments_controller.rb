@@ -10,12 +10,17 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    if current_user
-      @appointment = current_user.appointments.create(appt_params)  
-      redirect_to service_appointment_path(@appointment.service, @appointment)
+    
+    if current_user 
+      
+      @appointment = current_user.appointments.new(appt_params)
+      if @appointment.save
+        redirect_to service_appointment_path(@appointment.service, @appointment)
+      else 
+       render :new
+      end
     else
-      flash[:notice] = 'Please check your entries.'
-       redirect_to new_appointment_path
+      render :new
     end
   end
 

@@ -14,10 +14,11 @@ Rails.application.routes.draw do
 
  resources :clients, except: [:edit, :update, :destroy]
  resources :staffs, only: [:index, :show]
- resources :appointments, only: [:new, :create, :edit, :update]
+ resources :appointments, only: [:create, :edit, :update]
 
+ # nested resource appointments new, index, show, destroy
  resources :services do 
-    resources :appointments, except: [:new, :create, :edit, :update]
+    resources :appointments, except: [ :create, :edit, :update]
   end
 
 end
