@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   # route added for staff admin scope methods - eventually will build out staff and admin section.
   get '/admin' => 'staffs#admin'
-
+  
   # omniauth/facebook route
   get '/auth/facebook/callback' => 'sessions#omniauth_create'
 
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
  resources :services do 
     resources :appointments, except: [ :create, :edit, :update]
   end
+
 
 end
 

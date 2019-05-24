@@ -16,8 +16,12 @@ class StaffsController < ApplicationController
 
   def admin
     @booked = Client.appts_admin
+    @most_popular = Staff.most_popular
     
   end
+
+  
+
 private
 
   def staff_params

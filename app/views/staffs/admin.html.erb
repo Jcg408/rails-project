@@ -1,15 +1,11 @@
 <h1>Staff Admin</h1>
 
- <!-- need to redo data already in db in order to change appt time/date format -->
+ 
 
 <h2>Appointments Booked</h2> 
    <ul>
       
       <% @booked.each do |appt|%>
-        <!-- <% appt.each do |value|%>
-       <li>  
-            <%= value%>
-      <%end%> -->
          <p> Client: <%= appt[0]%> </p>
          <p> Date: <%= appt[1] %> </p> <br>
       </li>
@@ -17,6 +13,11 @@
       <%end%>
    </ul>
 
+   <h2>Most Popular</h2>
+      <% @most_popular.each do |person| %>
+         <h2> <%= person.name %>   Appointments: <%= person.appointments.count%></h2>
+         <%end%>
+    
  
    
    

@@ -12,7 +12,6 @@ class AppointmentsController < ApplicationController
   def create
     
     if current_user 
-      
       @appointment = current_user.appointments.new(appt_params)
       if @appointment.save
         redirect_to service_appointment_path(@appointment.service, @appointment)
