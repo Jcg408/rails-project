@@ -47,6 +47,17 @@
     margin: 10px;
     font-size: 14px;
   }
+
+#time {
+  float: right;
+  position: relative;
+  margin: auto 120px auto;
+  padding: 15px;
+  color: rgb(76, 25, 110);
+  border-style: dashed;
+  border-color: rgb(106, 48, 145);
+}
+
   .container {
     margin: 90px auto;
     text-align: left;
